@@ -7,4 +7,4 @@ class NewsConfig(AppConfig):
     name = 'news'
 
     def ready(self):
-        import news.signals  # ایمپورت سیگنال‌ها
+        import news.signals  
