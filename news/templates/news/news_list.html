@@ -1,0 +1,30 @@
+<!-- news/templates/news/news_list.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>News Aggregator</title>
+</head>
+<body>
+    <h1>News Aggregator</h1>
+    <form method="get">
+        <select name="category">
+            <option value="">All Categories</option>
+            {% for category in categories %}
+                <option value="{{ category.name }}">{{ category.name }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Filter</button>
+    </form>
+    
+    <ul>
+        {% for news in news_list %}
+            <li>
+                <h2>{{ news.title }}</h2>
+                <p>{{ news.description }}</p>
+                <a href="{{ news.url }}">Read more</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
