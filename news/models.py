@@ -20,7 +20,7 @@ class News(models.Model):
     def __str__(self):
         return self.title
 
-# سیگنال‌ها را بعد از تعریف مدل‌ها اضافه کنید
+
 @receiver(post_save, sender=News)
 def send_notification(sender, instance, created, **kwargs):
     if created:
